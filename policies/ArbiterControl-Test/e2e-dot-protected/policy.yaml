@@ -1,0 +1,12 @@
+version: "1.0"
+provenance: { required: false, required_fields: [], artifact_path: ".ai/provenance.json" }
+protected_paths:
+  - { pattern: "infrastructure/**", label: "Infrastructure", risk_class: "high" }
+evidence_requirements: []
+escalation_conditions:
+  - trigger: "high_risk_needs_review"
+    description: "High-risk changes need an approver"
+    condition: { risk_class: "high", when: "human_approval_required" }
+    category: "policy_declared_human_approval_required"
+    cleared_by: { team: "ArbiterControl-Test/e2e-approvers", min_approvals: 1 }
+failure_defaults: { protected_path_unavailable_input: DENY }
