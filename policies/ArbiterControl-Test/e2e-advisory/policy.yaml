@@ -1,0 +1,18 @@
+version: "1.0"
+provenance: { required: false, required_fields: [], artifact_path: ".ai/provenance.json" }
+protected_paths:
+  - { pattern: "infrastructure/iam/**", label: "IAM", risk_class: "high" }
+  - { pattern: "infrastructure/**", label: "Infrastructure", risk_class: "standard" }
+  - { pattern: ".github/workflows/**", label: "CI workflows", risk_class: "standard" }
+evidence_requirements:
+  - path_pattern: "infrastructure/**"
+    required_approvals: { team: "ArbiterControl-Test/e2e-approvers", min_approvals: 1 }
+  - path_pattern: ".github/workflows/**"
+    required_approvals: { team: "ArbiterControl-Test/e2e-approvers", min_approvals: 1 }
+escalation_conditions:
+  - trigger: "iam_change_needs_review"
+    description: "IAM changes need an approver"
+    condition: { risk_class: "high", when: "human_approval_required" }
+    category: "policy_declared_human_approval_required"
+    cleared_by: { team: "ArbiterControl-Test/e2e-approvers", min_approvals: 1 }
+failure_defaults: { protected_path_unavailable_input: DENY }
