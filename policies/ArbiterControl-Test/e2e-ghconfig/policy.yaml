@@ -1,0 +1,15 @@
+version: "1.0"
+provenance: { required: false, required_fields: [], artifact_path: ".ai/provenance.json" }
+protected_paths:
+  - { pattern: ".github/**", label: "GitHub configuration", risk_class: "standard" }
+  - { pattern: "**/action.yml", label: "Actions defined in the repository", risk_class: "standard" }
+  - { pattern: "**/action.yaml", label: "Actions defined in the repository", risk_class: "standard" }
+evidence_requirements:
+  - path_pattern: ".github/**"
+    required_approvals: { team: "ArbiterControl-Test/e2e-approvers", min_approvals: 1 }
+  - path_pattern: "**/action.yml"
+    required_approvals: { team: "ArbiterControl-Test/e2e-approvers", min_approvals: 1 }
+  - path_pattern: "**/action.yaml"
+    required_approvals: { team: "ArbiterControl-Test/e2e-approvers", min_approvals: 1 }
+escalation_conditions: []
+failure_defaults: { protected_path_unavailable_input: DENY }
