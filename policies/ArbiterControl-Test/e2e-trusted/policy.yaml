@@ -8,17 +8,17 @@ evidence_requirements:
   - path_pattern: "src/**"
     required_approvals: { team: "ArbiterControl-Test/e2e-approvers", min_approvals: 1 }
     required_checks:
-      - { name: "gitleaks", trusted_workflow: "ArbiterControl-Test/arbiter-trusted/.github/workflows/secret-scan.yml", trusted_workflow_sha: "1447674b155371442ed8ebd2b8c111b51bc736d9" }
-      - { name: "dependency-check", trusted_workflow: "ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml", trusted_workflow_sha: "1447674b155371442ed8ebd2b8c111b51bc736d9" }
+      - { name: "gitleaks", trusted_workflow: "ArbiterControl-Test/arbiter-trusted/.github/workflows/secret-scan.yml", trusted_workflow_sha: "f4c77e6529c4eb9ff239fdcb3dfff4dbabb5d193" }
+      - { name: "dependency-check", trusted_workflow: "ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml", trusted_workflow_sha: "f4c77e6529c4eb9ff239fdcb3dfff4dbabb5d193" }
   - path_pattern: "package.json"
     required_approvals: { team: "ArbiterControl-Test/e2e-approvers", min_approvals: 1 }
     required_checks:
-      - { name: "gitleaks", trusted_workflow: "ArbiterControl-Test/arbiter-trusted/.github/workflows/secret-scan.yml", trusted_workflow_sha: "1447674b155371442ed8ebd2b8c111b51bc736d9" }
-      - { name: "dependency-check", trusted_workflow: "ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml", trusted_workflow_sha: "1447674b155371442ed8ebd2b8c111b51bc736d9" }
+      - { name: "gitleaks", trusted_workflow: "ArbiterControl-Test/arbiter-trusted/.github/workflows/secret-scan.yml", trusted_workflow_sha: "f4c77e6529c4eb9ff239fdcb3dfff4dbabb5d193" }
+      - { name: "dependency-check", trusted_workflow: "ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml", trusted_workflow_sha: "f4c77e6529c4eb9ff239fdcb3dfff4dbabb5d193" }
   - path_pattern: "package-lock.json"
     required_approvals: { team: "ArbiterControl-Test/e2e-approvers", min_approvals: 1 }
     required_checks:
-      - { name: "gitleaks", trusted_workflow: "ArbiterControl-Test/arbiter-trusted/.github/workflows/secret-scan.yml", trusted_workflow_sha: "1447674b155371442ed8ebd2b8c111b51bc736d9" }
-      - { name: "dependency-check", trusted_workflow: "ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml", trusted_workflow_sha: "1447674b155371442ed8ebd2b8c111b51bc736d9" }
+      - { name: "gitleaks", trusted_workflow: "ArbiterControl-Test/arbiter-trusted/.github/workflows/secret-scan.yml", trusted_workflow_sha: "f4c77e6529c4eb9ff239fdcb3dfff4dbabb5d193" }
+      - { name: "dependency-check", trusted_workflow: "ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml", trusted_workflow_sha: "f4c77e6529c4eb9ff239fdcb3dfff4dbabb5d193" }
 escalation_conditions: []
 failure_defaults: { protected_path_unavailable_input: DENY }
