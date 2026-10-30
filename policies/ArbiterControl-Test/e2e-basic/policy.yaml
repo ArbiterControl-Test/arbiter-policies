@@ -16,3 +16,4 @@ escalation_conditions:
     category: "policy_declared_human_approval_required"
     cleared_by: { team: "ArbiterControl-Test/e2e-approvers", min_approvals: 1 }
 failure_defaults: { protected_path_unavailable_input: DENY }
+  broken: [unclosed
