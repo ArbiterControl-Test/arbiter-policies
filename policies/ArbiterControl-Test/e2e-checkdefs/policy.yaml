@@ -1,0 +1,13 @@
+version: "1.0"
+provenance: { required: false, required_fields: [], artifact_path: ".ai/provenance.json" }
+protected_paths:
+  - { pattern: ".github/**", label: "GitHub configuration", risk_class: "standard" }
+evidence_requirements:
+  - path_pattern: ".github/**"
+    required_approvals: { team: "ArbiterControl-Test/e2e-approvers", min_approvals: 1 }
+always_required_checks:
+  - { name: "e2e-check", app_id: 15368, workflow: ".github/workflows/e2e-check.yml" }
+check_definitions:
+  approvers: { team: "ArbiterControl-Test/e2e-security", min_approvals: 1 }
+escalation_conditions: []
+failure_defaults: { protected_path_unavailable_input: DENY }
