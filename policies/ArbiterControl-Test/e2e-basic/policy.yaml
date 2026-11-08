@@ -2,7 +2,6 @@ version: "1.0"
 provenance: { required: false, required_fields: [], artifact_path: ".ai/provenance.json" }
 protected_paths:
   - { pattern: "infrastructure/iam/**", label: "IAM", risk_class: "high" }
-  - { pattern: "infrastructure/**", label: "Infrastructure", risk_class: "standard" }
   - { pattern: ".github/workflows/**", label: "CI workflows", risk_class: "standard" }
 evidence_requirements:
   - path_pattern: "infrastructure/**"
