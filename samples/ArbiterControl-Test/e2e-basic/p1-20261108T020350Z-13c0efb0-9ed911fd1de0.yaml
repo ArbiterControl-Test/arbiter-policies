@@ -1,0 +1,4 @@
+# Synthetic sample for the Arbiter live suite (PLAN-206-R3).
+expect: ALLOW
+changed_paths: [docs/readme.md]
+actor_type: human
