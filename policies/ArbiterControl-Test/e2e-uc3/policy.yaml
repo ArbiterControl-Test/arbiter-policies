@@ -152,6 +152,87 @@ protected_paths:
   - pattern: "**/Directory.Build.targets"
     label: Dependencies (.NET)
     risk_class: standard
+  - pattern: "**/pdm.lock"
+    label: Dependencies (Python)
+    risk_class: standard
+  - pattern: "**/requirements/**/*.in"
+    label: Dependencies (Python)
+    risk_class: standard
+  - pattern: "**/environment.yml"
+    label: Dependencies (Python)
+    risk_class: standard
+  - pattern: "**/environment.yaml"
+    label: Dependencies (Python)
+    risk_class: standard
+  - pattern: "**/deno.json"
+    label: Dependencies (Deno)
+    risk_class: standard
+  - pattern: "**/deno.jsonc"
+    label: Dependencies (Deno)
+    risk_class: standard
+  - pattern: "**/deno.lock"
+    label: Dependencies (Deno)
+    risk_class: standard
+  - pattern: "**/pubspec.yaml"
+    label: Dependencies (Dart, Flutter)
+    risk_class: standard
+  - pattern: "**/pubspec.lock"
+    label: Dependencies (Dart, Flutter)
+    risk_class: standard
+  - pattern: "**/Package.swift"
+    label: Dependencies (Swift, CocoaPods)
+    risk_class: standard
+  - pattern: "**/Package.resolved"
+    label: Dependencies (Swift, CocoaPods)
+    risk_class: standard
+  - pattern: "**/Podfile"
+    label: Dependencies (Swift, CocoaPods)
+    risk_class: standard
+  - pattern: "**/Podfile.lock"
+    label: Dependencies (Swift, CocoaPods)
+    risk_class: standard
+  - pattern: "**/build.sbt"
+    label: Dependencies (Scala)
+    risk_class: standard
+  - pattern: "**/mix.exs"
+    label: Dependencies (Elixir)
+    risk_class: standard
+  - pattern: "**/mix.lock"
+    label: Dependencies (Elixir)
+    risk_class: standard
+  - pattern: "**/Chart.yaml"
+    label: Dependencies (Helm)
+    risk_class: standard
+  - pattern: "**/Chart.lock"
+    label: Dependencies (Helm)
+    risk_class: standard
+  - pattern: "**/Dockerfile"
+    label: Dependencies (container images)
+    risk_class: standard
+  - pattern: "**/Dockerfile.*"
+    label: Dependencies (container images)
+    risk_class: standard
+  - pattern: "**/*.Dockerfile"
+    label: Dependencies (container images)
+    risk_class: standard
+  - pattern: "**/Containerfile"
+    label: Dependencies (container images)
+    risk_class: standard
+  - pattern: "**/vendor/**"
+    label: Dependencies (vendored code)
+    risk_class: standard
+  - pattern: "**/third_party/**"
+    label: Dependencies (vendored code)
+    risk_class: standard
+  - pattern: "**/third-party/**"
+    label: Dependencies (vendored code)
+    risk_class: standard
+  - pattern: "**/node_modules/**"
+    label: Dependencies (vendored code)
+    risk_class: standard
+  - pattern: "**/.gitmodules"
+    label: Dependencies (Git submodules)
+    risk_class: standard
 evidence_requirements:
   - path_pattern: .github/**
     required_approvals:
@@ -534,6 +615,222 @@ evidence_requirements:
         trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
         trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
   - path_pattern: "**/Directory.Build.targets"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/pdm.lock"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/requirements/**/*.in"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/environment.yml"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/environment.yaml"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/deno.json"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/deno.jsonc"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/deno.lock"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/pubspec.yaml"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/pubspec.lock"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/Package.swift"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/Package.resolved"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/Podfile"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/Podfile.lock"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/build.sbt"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/mix.exs"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/mix.lock"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/Chart.yaml"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/Chart.lock"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/Dockerfile"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/Dockerfile.*"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/*.Dockerfile"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/Containerfile"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/vendor/**"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/third_party/**"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/third-party/**"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/node_modules/**"
+    required_approvals:
+      team: ArbiterControl-Test/e2e-approvers
+      min_approvals: 1
+    required_checks:
+      - name: dependency-check
+        trusted_workflow: ArbiterControl-Test/arbiter-trusted/.github/workflows/dependency-check.yml
+        trusted_workflow_sha: 47179fcc5eac312b40b7916d1011da509b6cad81
+  - path_pattern: "**/.gitmodules"
     required_approvals:
       team: ArbiterControl-Test/e2e-approvers
       min_approvals: 1
