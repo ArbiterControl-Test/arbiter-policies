@@ -9,5 +9,9 @@ always_required_checks:
   - { name: "e2e-check", app_id: 15368, workflow: ".github/workflows/e2e-check.yml" }
 check_definitions:
   approvers: { team: "ArbiterControl-Test/e2e-security", min_approvals: 1 }
+# A · ARB-417 (#146): W7's pull request is the test agent's, which would need two security-team approvers, and the team
+# has one; uc2 tests check definitions, not approver counts (operator, 2026-11-11, lane D's plan).
+agent_pull_requests:
+  min_approvals: 1
 escalation_conditions: []
 failure_defaults: { protected_path_unavailable_input: DENY }
