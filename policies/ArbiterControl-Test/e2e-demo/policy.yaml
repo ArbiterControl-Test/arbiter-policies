@@ -500,6 +500,7 @@ check_definitions:
   paths: ["**/.gitleaks.toml", "**/.gitleaksignore"]
   approvers: { team: "ArbiterControl-Test/e2e-bypass", min_approvals: 1 }
 
+
 escalation_conditions:
   - trigger: "iam_change_needs_security_review"
     description: "IAM changes need a security team approval"
