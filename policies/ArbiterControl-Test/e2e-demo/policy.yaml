@@ -498,7 +498,7 @@ always_required_checks:
 
 check_definitions:
   paths: ["**/.gitleaks.toml", "**/.gitleaksignore"]
-  approvers: { team: "ArbiterControl-Test/e2e-bypass", min_approvals: 1 }
+  approvers: { team: "ArbiterControl-Test/e2e-security", min_approvals: 1 }
 
 
 escalation_conditions:
@@ -506,7 +506,7 @@ escalation_conditions:
     description: "IAM changes need a security team approval"
     condition: { risk_class: "high", when: "human_approval_required" }
     category: "policy_declared_human_approval_required"
-    cleared_by: { team: "ArbiterControl-Test/e2e-bypass", min_approvals: 1 }
+    cleared_by: { team: "ArbiterControl-Test/e2e-security", min_approvals: 1 }
 
 failure_defaults:
   protected_path_unavailable_input: DENY
