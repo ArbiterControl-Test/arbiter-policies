@@ -8,7 +8,7 @@ approver_accounts:
   - { person: "test security approver", id: 358497171, login: "arbitercontrol-security" }
 
 policy_repository:
-  min_approvals: 2
+  min_approval: 2
 
 provenance:
   required: false
